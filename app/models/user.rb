@@ -4,10 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
-         #RELATIONS
+  #RELATIONS
   #has_many :courses, dependent: :destroy
   #has_many :materials
-  #has_many :levels
+  has_many :levels
   #has_many :exercices, through: :courses
 
 
