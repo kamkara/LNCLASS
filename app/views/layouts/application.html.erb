@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LNCLASS</title>
+    <title><%= title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= render "layouts/shared/headers" %>
@@ -11,6 +11,7 @@
 
   <body>
     <%= render "layouts/shared/noticed" %>
+    <%= render "shared/nav/navbar" %>
     <%= yield %>
     <%= render "layouts/shared/footers" %>
   </body>

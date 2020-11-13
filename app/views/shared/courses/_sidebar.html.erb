@@ -1,0 +1,15 @@
+
+<!-- boucle for matiere items/!-->
+<div class="container-fluid">
+  <!-- Icon/!-->
+  <div class="h-8 bg-red-200 rounded-md">
+    <span class="fil-icon">
+        <i class="fa fa-square m-2"></i> Fil Matières
+    </span>
+  </div>
+  <ul class="leading-relaxed pt-2">
+    <% @materials.each do |m| %>
+     <li class="text-lg font-bold"> <%= link_to m.title, m , class: "hover:no-underline hover:text-black" %></li>
+    <% end %>
+  </ul>
+</div>
