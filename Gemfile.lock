@@ -229,7 +229,7 @@ DEPENDENCIES
   bootstrap_form (~> 4.5)
   byebug
   capybara (>= 2.15)
-  devise (~> 4.7, >= 4.7.3)
+  devise
   friendly_id (~> 5.4)
   jbuilder (~> 2.7)
   listen (~> 3.2)
