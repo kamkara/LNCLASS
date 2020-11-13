@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   #RELATIONS
   #has_many :courses, dependent: :destroy
-  #has_many :materials
+  has_many :materials
   has_many :levels
   #has_many :exercices, through: :courses
 
