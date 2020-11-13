@@ -1,6 +1,6 @@
 class Material < ApplicationRecord
   belongs_to :user
-  #has_many :courses
+  has_many :courses
 
   #CONSTANTS
   CYCLES= ["all","sec"]

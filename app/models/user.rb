@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   #RELATIONS
-  #has_many :courses, dependent: :destroy
+  has_many :courses, dependent: :destroy
   has_many :materials
   has_many :levels
   #has_many :exercices, through: :courses

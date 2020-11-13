@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyString
+  author: MyString
+  memo: MyString
+  slug: MyString
+  user: one
+  level: one
+  material: one
+
+two:
+  title: MyString
+  content: MyString
+  author: MyString
+  memo: MyString
+  slug: MyString
+  user: two
+  level: two
+  material: two

@@ -10,11 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_113644) do
+ActiveRecord::Schema.define(version: 2020_11_13_120156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "courses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "author"
+    t.string "memo"
+    t.string "slug"
+    t.uuid "user_id", null: false
+    t.uuid "level_id", null: false
+    t.uuid "material_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["level_id"], name: "index_courses_on_level_id"
+    t.index ["material_id"], name: "index_courses_on_material_id"
+    t.index ["user_id"], name: "index_courses_on_user_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -74,6 +90,9 @@ ActiveRecord::Schema.define(version: 2020_11_13_113644) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "courses", "levels"
+  add_foreign_key "courses", "materials"
+  add_foreign_key "courses", "users"
   add_foreign_key "levels", "users"
   add_foreign_key "materials", "users"
 end
