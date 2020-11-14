@@ -11,6 +11,8 @@ class MaterialsController < ApplicationController
   # GET /materials/1
   # GET /materials/1.json
   def show
+    @materials = Material.all
+    @courses = Course.where('material_id = ?', @material.id)
   end
 
   # GET /materials/new

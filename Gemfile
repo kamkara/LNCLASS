@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 ################  STYLES  ################
 gem 'bootstrap_form', '~> 4.5'
-
+#gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
 
 ################  URLS ################
 gem 'friendly_id', '~> 5.4'

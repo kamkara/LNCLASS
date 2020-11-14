@@ -6,11 +6,13 @@
 <%= render "shared/courses/feed_search" %>
 
 <% @courses.each do |course| %>
+
+  <!-- margin between courses!-->
 <div class="mt-2"></div>
 <div class="card pt-2">
   <!-- title/!-->
 	<p class="font-sans text-xl font-black container ">
-	  <%= link_to course do %>
+	  <%= link_to course, class:"hover:text-black" do %>
 	    <%= course.title %>
 	  <% end %>
 	</p>
@@ -26,17 +28,14 @@
 							<%= course.author %>
 						</span>
 						<!-- course material-->
-						<p class="font-thin text-sm hover:bg-white hover:underline"> · Prof de
+						<p class="font-thin text-sm hover:text-black hover:font-black hover:underline"> · Prof de
 							<span class="capitalize"><%= course.material.title %></span>
 						</p>
-						<!--  add author punch line-->
-						<p class="font-bold text-sm hover:bg-white">
-							<%= course.memo %>
-						</p>
+
 					</div>
 				<% end %>
 				<!-- render course clickable-->
-				<%= link_to course_path(course), class: "hover:text-black" do %>
+				<%= link_to course_path(course), class: "hover:text-black hover:no-underline" do %>
 					<div class="container mb-2">
 						<!-- course content-->
 						<%= truncate(strip_tags(course.content.to_s.html_safe), length: 700) %>
