@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= render "layouts/shared/headers" %>
+    <%= render "layouts/shared/headers_dashboard" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,6 +16,7 @@
       <%= render "shared/nav/navbar" %>
       <%= yield %>
       <%= render "layouts/shared/footers" %>
+      <%= render "layouts/shared/footers_dashboard" %>
     </div>
   </body>
 </html>
