@@ -72,3 +72,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+
+############################  DOCUMENTATIONS     ############################
+#https://dev.to/kattak2k/adding-a-favicon-to-your-site-using-webpacker-in-rails-6-2m2h

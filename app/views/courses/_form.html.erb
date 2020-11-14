@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
-  <div class="form-inputs">
-    <%= f.text_field :title, label: 'Titre:', placeholder:"Le titre du Cours" %>
-    <%= f.rich_text_area :content, label: 'Contenu:', class: "customized-min-height", placeholder: "Saissir le contenu ..." %>
+  <div class="control-form">
+    <%= f.text_field :title, label: 'Titre:', class: "form-control", placeholder:"Le titre du Cours" %>
+  </div>
+  <div class="control-form my-1">
+    <%= f.rich_text_area :content, label: 'Contenu:', class: "form-control customized-min-height", placeholder: "Saissir le contenu ..." %>
   </div>
 
     <div class="row my-2">
@@ -23,7 +25,7 @@
             <%= f.select :material_id,
               @materials.map { |m| [m.title, m.id] },
               placeholder:"la matiere",
-               hide_label: true %>
+               hide_label: true, class:"form-control" %>
 
           </span>
         </div>
