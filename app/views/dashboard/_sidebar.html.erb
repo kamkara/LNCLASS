@@ -14,28 +14,24 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="shopping-cart"></span>
-            Products
-        </a>
+        <%= link_to new_course_path, class: "m-links nav-link " do %>
+         <i class="fa fa-plus-circle" aria-hidden="true"></i>Créer Léçons
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="users"></span>
-            Customers
-        </a>
+        <%= link_to new_material_path, class: "m-links nav-link " do %>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>Matiere
+      <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="bar-chart-2"></span>
-           Reports
-        </a>
+        <%= link_to new_level_path, class: "m-links nav-link " do %>
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>Promotion
+        <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="layers"></span>
-            Integrations
-        </a>
+        <%= link_to root_path, class: "m-links nav-link " do %>
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> Exercice
+        <% end %>
       </li>
     </ul>
 
