@@ -8,26 +8,20 @@
             </a>
           </li>
           <li class="nav-item">
-            <%= link_to root_path, class:"nav-link" do %>
+            <%= link_to new_course_path, class:"nav-link" do %>
               <span data-feather="file"></span> Léçons
             <% end  %>
           </li>
           <li class="nav-item">
-            <%= link_to root_path, class:"nav-link font-semibold" do %>
-              <span data-feather="shopping-cart"></span> Exercices Pratiques
+            <%= link_to root_path, class: "nav-link font-bold active" do %>
+              <span data-feather="shopping-cart"></span> Exercices
             <% end  %>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Customers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              Reports
-            </a>
+            <%= link_to root_path, class:"nav-link font-bold" do %>
+              <span ></span> Rapports
+            <% end  %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">

@@ -12,8 +12,9 @@
  *
  */
 
+@import "bootstrap";
 @import "rails_bootstrap_forms";
 @import "nav/navbar";
+@import "dashboard/dashboard";
 @import "text_rich/actiontext";
 @import "trix/dist/trix";
-@import "dashboard/dashboard";

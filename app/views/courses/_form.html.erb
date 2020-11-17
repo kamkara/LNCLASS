@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="control-form">
-    <%= f.text_field :title, label: 'Titre:', class: "form-control", placeholder:"Le titre du Cours" %>
+    <%= f.text_field :title, label: 'Titre:', class: "form-control", placeholder:"Le titre de la léçcon ..." %>
   </div>
   <div class="control-form my-1">
     <%= f.rich_text_area :content, label: 'Contenu:', class: "form-control customized-min-height", placeholder: "Saissir le contenu ..." %>
@@ -43,6 +43,6 @@
     </div>
 
     <div class="form-actions">
-      <%= f.submit "Créer le Cours",  class: "btn btn-primary" %>
+      <%= f.submit "Créer la léçcon",  class: "btn btn-primary" %>
     </div>
 <% end %>

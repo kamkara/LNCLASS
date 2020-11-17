@@ -16,34 +16,22 @@
 
             <!-- Home onglet/!-->
             <li class="nav-item active">
-              <%= link_to root_path, class: "m-links nav-link" do %>
+              <%= link_to root_path, class: "m-links nav-link active " do %>
                <i class="fa fa-home"></i> Acceuil
               <% end %>
             </li>
 
             <!-- user avatar/!-->
             <li class="nav-item active">
-              <%= link_to edit_user_registration_path(@user), class: "m-links nav-link capitalize" do %>
+              <%= link_to edit_user_registration_path(@user), class: " active m-links nav-link capitalize" do %>
                 <i class="fas fa-user-circle"></i>
                  <%= current_user.username %>
               <% end %>
-            </li>
-             <li class="nav-item active">
-
-    </li>
-    <li class="nav-item active">
-
-    </li>
-    <li class="nav-item active">
-
-    </li>
-
-
 
             <!-- create course by teacher/!-->
 
               <li class="nav-item active">
-                <%= link_to dashboard_index_path, class: "m-links nav-link " do %>
+                <%= link_to dashboard_index_path, class: "m-links nav-link active  " do %>
                  <i class="fas fa-users"></i> TablesClass
                 <% end %>
               </li>
@@ -51,7 +39,7 @@
 
              <!-- Sign out /!-->
             <li class="nav-item active">
-              <%= link_to destroy_user_session_path, method: :delete, class: "m-links nav-link" do %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "m-links nav-link active " do %>
                <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
               <% end %>
             </li>

@@ -27,7 +27,9 @@ gem 'jbuilder', '~> 2.7'
 
 ################  STYLES  ################
 gem 'bootstrap_form', '~> 4.5'
-#gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
+gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
+gem 'bootstrap', '~> 5.0.0.alpha3'
+
 
 ################  URLS ################
 gem 'friendly_id', '~> 5.4'
@@ -40,7 +42,8 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'devise'
 #gem 'devise_invitable', '~> 2.0', '>= 2.0.2'
 
-
+################  JS  ################
+gem 'jquery-rails', '~> 4.4'
 
 
 # Reduces boot times through caching; required in config/boot.rb
