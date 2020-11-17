@@ -3,6 +3,7 @@ class Course < ApplicationRecord
   belongs_to :level
   belongs_to :material
   has_rich_text :content
+  has_many :exercices
 
 
 
