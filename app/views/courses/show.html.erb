@@ -2,13 +2,14 @@
 
 
 <div class="container-sm">
-  <div class="row mt-6">
+  <div class="row md:mt-6">
     <div class="col-12 col-md-6 col-lg-6">
+
       <!-- card course-->
-      <div class="card ">
+      <div class="card">
         <!-- title!-->
         <h1 class="text-xl leading-tight font-bold mt-2 mx-2">
-            <%= @course.title %>
+          <%= @course.title %>
         </h1>
 
          <!-- avatar data/!-->
@@ -27,6 +28,15 @@
           <!-- Options-->
           <%= render "courses/shared/options" %>
         </div>
+      </div>
+    </div>
+    <!-- Exercices-->
+    <div class="col-12 col-md-6 col-lg-6">
+    <h1 class="font-bold text-xl">Les Exercices pratiques</h1>
+      <div class="card">
+        <span class="m-1">
+            <%= render @course.exercices %>
+        </span>
       </div>
     </div>
 

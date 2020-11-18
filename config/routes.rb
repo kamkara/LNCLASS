@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :exercices
-  resources :courses
+
+  resources :courses do
+    #Enable exercices
+    resources :exercices, only: [:index, :create]
+  end
   resources :materials
   resources :levels
   get 'dashboard/index'
