@@ -5,17 +5,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= render "layouts/shared/headers" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body class="md:bg-gray-200">
-    <div class="md:mt-8">
+    <div class="">
       <%= render "layouts/shared/noticed" %>
-
       <%= yield %>
-
+        <%= render "layouts/shared/footers" %>
     </div>
+
+
   </body>
 </html>
+
