@@ -1,8 +1,9 @@
 <!--HEADER/!-->
 <!-- no header render on the home page/!-->
+    <% if user_signed_in? %>
   <!-- Navigation -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-blue-600 fixed-top">
-  <div class="container">
+  <div class="container nav">
     <%= link_to root_path, class: "navbar-brand logo font-bold" do %>
        LNCLASS
     <% end  %>
@@ -10,7 +11,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <% if user_signed_in? %>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
 
