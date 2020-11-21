@@ -2653,7 +2653,7 @@ p {
     left: 0;
     width: 100%;
     z-index: 9;
-    padding: 10px 0;
+    padding: 50px 0;
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
     -ms-transition: all 0.3s ease-out 0s;
@@ -3093,7 +3093,7 @@ p {
 }
 
 .navbar .navbar-btn ul li a {
-    dding: 10px 16px;
+    paddpadding: 10px 16px;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 700;

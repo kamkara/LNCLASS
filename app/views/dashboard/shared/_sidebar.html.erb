@@ -13,7 +13,7 @@
         <% end  %>
       </li>
       <li class="nav-item">
-      <%= render "dashboard/shared/sidebar/materials" %>
+      <%= render "dashboard/shared/sidebar/levels" %>
       </li>
 
       <li class="nav-item">
@@ -22,9 +22,10 @@
         <% end  %>
       </li>
       <li class="nav-item">
+      <%= link_to 'promotions', levels_path %>
         <a class="nav-link" href="#">
           <span data-feather="layers"></span>
-            Integrations
+
         </a>
       </li>
     </ul>

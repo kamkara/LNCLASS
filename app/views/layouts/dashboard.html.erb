@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= render "layouts/shared/headers" %>
+    <%= render "layouts/shared/headers_dashboard" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="md:bg-gray-200">
+    <div class="md:mt-8">
+      <%= render "layouts/dashboard/navbar" %>
+      <%= render "dashboard/shared/sidebar" %>
+      <%= yield %>
+      <%= render "layouts/shared/noticed" %>
+      <%= render "layouts/shared/footers_dashboard" %>
+      <%= render "layouts/shared/footers" %>
+    </div>
+  </body>
+</html>

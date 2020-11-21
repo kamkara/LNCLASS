@@ -1,0 +1,15 @@
+<!-- List all level and -->
+
+<% @levels.each do |level| %>
+  <li class="text-lg font-bold list-group-item" id:'<%= level.id %>' >
+    <%= link_to level.title, level , class: "hover:no-underline hover:text-black", id:"collapse" %>
+    <p class="">
+    Leçons
+    </p>
+    <p class="">
+    <!-- lexercices de HG de 3e -->
+    Exrcices
+    </p>
+
+  </li>
+<% end %>
