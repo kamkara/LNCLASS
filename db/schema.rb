@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_121819) do
+ActiveRecord::Schema.define(version: 2020_11_17_170042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -61,6 +61,20 @@ ActiveRecord::Schema.define(version: 2020_11_13_121819) do
     t.index ["level_id"], name: "index_courses_on_level_id"
     t.index ["material_id"], name: "index_courses_on_material_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "exercices", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "author"
+    t.string "search_id"
+    t.string "slug"
+    t.uuid "course_id", null: false
+    t.uuid "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_exercices_on_course_id"
+    t.index ["user_id"], name: "index_exercices_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -125,6 +139,8 @@ ActiveRecord::Schema.define(version: 2020_11_13_121819) do
   add_foreign_key "courses", "levels"
   add_foreign_key "courses", "materials"
   add_foreign_key "courses", "users"
+  add_foreign_key "exercices", "courses"
+  add_foreign_key "exercices", "users"
   add_foreign_key "levels", "users"
   add_foreign_key "materials", "users"
 end

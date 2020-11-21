@@ -1,8 +1,9 @@
 <!--HEADER/!-->
 <!-- no header render on the home page/!-->
+    <% if user_signed_in? %>
   <!-- Navigation -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-blue-600 fixed-top">
-  <div class="container">
+  <div class="container nav">
     <%= link_to root_path, class: "navbar-brand logo font-bold" do %>
        LNCLASS
     <% end  %>
@@ -10,40 +11,28 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <% if user_signed_in? %>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
 
             <!-- Home onglet/!-->
             <li class="nav-item active">
-              <%= link_to root_path, class: "m-links nav-link" do %>
+              <%= link_to root_path, class: "m-links nav-link active " do %>
                <i class="fa fa-home"></i> Acceuil
               <% end %>
             </li>
 
             <!-- user avatar/!-->
             <li class="nav-item active">
-              <%= link_to edit_user_registration_path(@user), class: "m-links nav-link capitalize" do %>
+              <%= link_to edit_user_registration_path(@user), class: " active m-links nav-link capitalize" do %>
                 <i class="fas fa-user-circle"></i>
                  <%= current_user.username %>
               <% end %>
-            </li>
-             <li class="nav-item active">
 
-    </li>
-    <li class="nav-item active">
-
-    </li>
-    <li class="nav-item active">
-
-    </li>
-
-
-
+              </li>
             <!-- create course by teacher/!-->
 
               <li class="nav-item active">
-                <%= link_to dashboard_index_path, class: "m-links nav-link " do %>
+                <%= link_to dashboard_index_path, class: "m-links nav-link active  " do %>
                  <i class="fas fa-users"></i> TablesClass
                 <% end %>
               </li>
@@ -51,7 +40,7 @@
 
              <!-- Sign out /!-->
             <li class="nav-item active">
-              <%= link_to destroy_user_session_path, method: :delete, class: "m-links nav-link" do %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "m-links nav-link active " do %>
                <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
               <% end %>
             </li>

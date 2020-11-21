@@ -20,14 +20,22 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick', '~> 4.11'
+
 
 ################  STYLES  ################
 gem 'bootstrap_form', '~> 4.5'
-#gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
+gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
+gem 'bootstrap', '~> 5.0.0.alpha3'
+
+################  UX/UI ################
+#gem 'time_ago_in_words', '~> 0.1.1'
+#gem 'acts_as_votable', '~> 0.12.1'
+#gem 'impressionist', '~> 2.0'
 
 ################  URLS ################
 gem 'friendly_id', '~> 5.4'
@@ -40,7 +48,8 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem 'devise'
 #gem 'devise_invitable', '~> 2.0', '>= 2.0.2'
 
-
+################  JS  ################
+gem 'jquery-rails', '~> 4.4'
 
 
 # Reduces boot times through caching; required in config/boot.rb

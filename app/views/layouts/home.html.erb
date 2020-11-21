@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= render "layouts/shared/headers" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body class="md:bg-gray-200">
+    <div class="">
+      <%= render "layouts/shared/noticed" %>
+      <%= render "shared/nav/navbar" %>
+      <%= yield %>
+        <%= render "layouts/shared/footers" %>
+    </div>
+
+
+  </body>
+</html>
+

@@ -18,6 +18,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    #render layout: "dashboard"
   end
 
   # GET /courses/1/edit
@@ -33,6 +34,7 @@ class CoursesController < ApplicationController
 
     if @course.save
       redirect_to @course, notice: 'Course was successfully created.'
+    render layout: "dashboard"
     else
       render :new
       #render layout: "dashboard"
