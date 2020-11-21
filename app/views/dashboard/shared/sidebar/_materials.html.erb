@@ -9,7 +9,9 @@ ex: Math for 3e
 -->
   <ul class="leading-relaxed pt-2 collapse list-group list-group-flush" id="collapseSidebar">
     <% @materials.each do |m| %>
-     <li class="text-lg font-bold list-group-item" id:'<%= m.id %>' > <%= link_to m.title, m , class: "hover:no-underline hover:text-black" %></li>
+      <li class="text-lg font-bold list-group-item" id:'<%= m.id %>' >
+       <%= link_to m.title, m , class: "hover:no-underline hover:text-black" %>
+      </li>
     <% end %>
   </ul>
 </div>

@@ -9,6 +9,9 @@ class DashboardController < ApplicationController
     @levels = Level.all
   end
 
+  def show
+
+  end
 
 private
 
