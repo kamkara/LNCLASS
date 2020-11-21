@@ -1,15 +1,5 @@
-<%= form_with(model: course, local: true) do |f| %>
-  <% if course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<%= form_with(model: @course, local: true) do |f| %>
 
-      <ul>
-        <% course.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="control-form">
     <%= f.text_field :title, label: 'Titre:', class: "form-control", placeholder:"Le titre de la léçcon ..." %>

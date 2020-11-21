@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
-    render layout: "dashboard"
+    #render layout: "dashboard"
   end
 
   # GET /courses/1/edit

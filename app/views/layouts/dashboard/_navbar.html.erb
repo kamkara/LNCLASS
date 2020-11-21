@@ -10,10 +10,14 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <%= link_to 'TablesClass', dashboard_index_path %>
+
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <%= link_to edit_user_registration_path(@user), class: " active m-links nav-link capitalize" do %>
+          <i class="fas fa-user-circle"></i>
+            <%= current_user.username %>
+        <% end %>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>

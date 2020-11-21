@@ -9,6 +9,10 @@ class DashboardController < ApplicationController
     @materials = Material.all
     @levels = Level.all
   end
+  def home
+
+  end
+
 
   def show
 
