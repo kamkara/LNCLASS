@@ -15,7 +15,7 @@ class DashboardController < ApplicationController
 
 
   def show
-
+    @exercices = Exercice.all
   end
 
 private

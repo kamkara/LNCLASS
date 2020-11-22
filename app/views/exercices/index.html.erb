@@ -1,39 +1,27 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Exercices</h1>
+<div class="col-8">
+  <% @exercices.each do |exercice| %>
+    <div class="container">
+      <span class="">
+        <%= exercice.title %>
+      </span>
+      <span class="">
+        <%= exercice.content %>
+      </span>
+      <span class="">
+        <%= exercice.author %>
+      </span>
+      <span class="">
+        <%= exercice.search_id %>
+      </span>
+      <span class="">
+        <%= exercice.user_id %>
+      </span>
+      <span class="bg-red-600">
+      course referral:
+        <%= exercice.course.level_id %>
+      </span>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Author</th>
-      <th>Search</th>
-      <th>Slug</th>
-      <th>Course</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @exercices.each do |exercice| %>
-      <tr>
-        <td><%= exercice.title %></td>
-        <td><%= exercice.content %></td>
-        <td><%= exercice.author %></td>
-        <td><%= exercice.search_id %></td>
-        <td><%= exercice.slug %></td>
-        <td><%= exercice.course_id %></td>
-        <td><%= exercice.user_id %></td>
-        <td><%= link_to 'Show', exercice %></td>
-        <td><%= link_to 'Edit', edit_exercice_path(exercice) %></td>
-        <td><%= link_to 'Destroy', exercice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Exercice', new_exercice_path %>
+    </div>
+  <% end %>
+</div>
