@@ -12,10 +12,10 @@
   </head>
 
   <body class="md:bg-gray-200">
-    <div class="">
-      <%= render "layouts/shared/noticed" %>
       <%= render "shared/nav/navbar" %>
+    <div class="mt-4">
       <%= yield %>
+      <%= render "layouts/shared/noticed" %>
         <%= render "layouts/shared/footers" %>
     </div>
 
