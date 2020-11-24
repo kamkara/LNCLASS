@@ -8,8 +8,24 @@
     </span>
   </div>
   <ul class="leading-relaxed pt-2">
+  <% if current_user.role != "teacher"  %>
     <% @materials.each do |m| %>
      <li class="text-lg font-bold"> <%= link_to m.title, m , class: "hover:no-underline hover:text-black" %></li>
     <% end %>
+
+  <% else %>
+    <!-- afficher la material pour tous les niveaux-->
+    <% @levels.each do |level| %>
+      <li class="text-lg font-bold">
+      <%= link_to  level , class: "hover:no-underline hover:text-black" do %>
+        <% @materials.each do | m| %>
+          <%= link_to m.title l.title root_path%>
+        <% end %>
+
+      <% end %>
+      </li>
+    <% end %>
+  <% end %>
+
   </ul>
 </div>
