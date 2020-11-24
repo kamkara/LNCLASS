@@ -18,8 +18,15 @@ class MaterialsController < ApplicationController
 
     elsif current_user.role == "teacher"
        # order pour facilite la recherche du cours
+      @materials = Material.where("material_id = ?",
+                            current_user.material_id).
+                            order('create_at DESC')
+      @courses   = Course.where("material_id = ?",
+                           @material.id).order('created_at DESC')
+
+    elsif current_user.role != "teacher" || current_user.role != "teacher"
       @materials = Material.all.order('created_at DESC')
-      @courses   = Course.where("material_id = ?", @material.id).order('created_at DESC'
+      @courses   =Course.all.order('created_at DESC')
     end
   end
 
