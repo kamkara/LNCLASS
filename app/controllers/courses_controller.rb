@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
 
     if @course.save
       redirect_to @course, notice: 'Course was successfully created.'
-    render layout: "dashboard"
+    #render layout: "dashboard"
     else
       render :new
       #render layout: "dashboard"

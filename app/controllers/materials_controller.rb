@@ -11,8 +11,18 @@ class MaterialsController < ApplicationController
   # GET /materials/1
   # GET /materials/1.json
   def show
-    @materials = Material.all
-    @courses = Course.where('material_id = ?', @material.id)
+    if current_user.role == "student"
+      @materials = Material.all
+      @courses   = Course.where("level_id = ? and material_id = ?",
+                          current_user.level_id, @material.id)
+
+    elsif current_user.role == "teacher"
+       # order pour facilite la recherche du cours
+      @materials = Material.where('material_id = ?', current_user.material.id)
+                    .order('created_at DESC')
+      @courses  = Course.where('material_id = ?', current_user.material.id)
+                  .order('created_at DESC')
+    end
   end
 
   # GET /materials/new

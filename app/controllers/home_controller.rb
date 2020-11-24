@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
 
   def index
-    @courses = Course.all.order('created_at desc')
+    #student content
     @materials = Material.all
+    @courses = Course.all
+
   end
 end
