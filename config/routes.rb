@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'prof/index'
+  get 'eleve/index'
   resources :exercices
 
   resources :courses do
