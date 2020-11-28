@@ -1,3 +1,7 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 col-md-8 offset-md-2 pt-22">
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -10,6 +14,33 @@
   <div class="field">
     <%= f.label :memo %><br />
     <%= f.text_field :memo %>
+  </div>
+   <div class="field">
+    <%= f.label :role %><br />
+    <%= f.text_field :role %>
+  </div>
+  <div class="input-form">
+    <div class="col-5  col-md-3 col-lg-3">
+        <div class="input-form">
+          <span class="select">
+
+            <%= f.select :level_id,
+              @levels.map { |l| [l.title, l.id] },
+              placeholder:"Niveau",
+               hide_label: true %>
+          </span>
+        </div>
+      </div>
+      <div class="col-5 col-md-3 col-lg-3">
+        <div class="input-form">
+          <span class="select">
+            <%= f.select :material_id,
+              @materials.map { |m| [m.title, m.id] },
+              placeholder:"la matiere",
+               hide_label: true, class:"form-control" %>
+          </span>
+        </div>
+      </div>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -51,3 +82,9 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+
+    </div>
+</div>
+
+</div>

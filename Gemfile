@@ -37,6 +37,18 @@ gem 'bootstrap', '~> 5.0.0.alpha3'
 #gem 'acts_as_votable', '~> 0.12.1'
 #gem 'impressionist', '~> 2.0'
 
+
+################### REAL TIME && REACIVE APP ############################
+#gem 'anycable', '~> 1.0', '>= 1.0.1'
+#gem 'view_component', '~> 2.22', '>= 2.22.1'
+#gem 'view_component_reflex', '~> 2.6', '>= 2.6.2'
+#gem 'cable_ready', '~> 4.4'
+#gem 'stimulus_reflex', '~> 3.3'
+#gem 'optimism', '~> 0.3.5'
+#gem 'futurism', '~> 0.6.0'
+
+
+
 ################  URLS ################
 gem 'friendly_id', '~> 5.4'
 
