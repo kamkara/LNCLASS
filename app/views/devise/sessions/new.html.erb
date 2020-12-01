@@ -1,42 +1,43 @@
-<div class="col-12 col-md-6 col-lg-6 offset-md-3">
-<div class="container">
-    <div class="card text-center">
-      <div class="card-header">
-        <h2 class='card-title'>Se Connectez</h2>
-      </div>
-    <div class="card-body">
-
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",
-       class:"form-control", placeholder:"N° Matricule ou Email" %>
-    </div>
-
-    <div class="field mt-1">
-      <br />
-      <%= f.password_field :password, autocomplete: "current-password", class:"form-control",
-      placeholder:"Mot de passe" %>
-    </div>
-
-    <% if devise_mapping.rememberable? %>
-      <div class="mt-2 ">
-        <%= f.check_box :remember_me %>
-        <%= f.label :'Oui, restez connecter' %>
-      </div>
-    <% end %>
-
-    <div class="actions">
-      <%= f.submit "Se Connectez", class:"btn btn-primary" %>
-    </div>
-  <% end %>
-
-</div>
-</div>
-</div>
-</div>
-
-</div>
 <%= content_for @title="Se Connecter" %>
+
+
+<div class="col-12 col-md-6 col-lg-6 offset-md-3">
+  <div class="container">
+    <div class="card text-center mt-4">
+      <!-- sign in header Msg-->
+      <div class="card-header">
+        <h2 class='card-title font-bold'>Se Connectez</h2>
+      </div>
+
+      <!-- sign in content Msg-->
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",
+            class:"form-control", placeholder:"N° Matricule ou Email" %>
+          </div>
+
+          <div class="field mt-1">
+            <br />
+            <%= f.password_field :password, autocomplete: "current-password", class:"form-control",
+            placeholder:"Mot de passe" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="mt-2 ">
+              <%= f.check_box :remember_me %>
+              <%= f.label :'Oui, restez connecter' %>
+            </div>
+          <% end %>
+
+          <div class="actions">
+            <%= f.submit "Se Connectez", class:"btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
