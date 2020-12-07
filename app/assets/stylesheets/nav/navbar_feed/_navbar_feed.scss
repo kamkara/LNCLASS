@@ -1,1 +1,17 @@
-.navbar_feeed {}
+.navbar .navbar-nav .nav-item_feed a {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    padding: 11px 4px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    margin: 7px 4px;
+}
