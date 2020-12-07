@@ -35,10 +35,7 @@ class User < ApplicationRecord
                          length: { maximum: 30 },
                          format: { with: /\A[^0-9`!@#\$%\^&*+_=]+\z/ }
   validates :gender, presence: true
-  validates :username, presence: true,
-  length: { maximum: 400 },
-  format: { with: /\A[\w]+\z/},
-  uniqueness: { case_sensitive: false }
+
 #Birthday
 #validates :birthday, presence: true
   #enum
@@ -49,13 +46,15 @@ class User < ApplicationRecord
               :matricule,
              :email, uniqueness: true
 
+
+
+#SLUG
   #build username
+
   def username
     "#{first_name} #{last_name}"
   end
 
-
-  #SLUG
   extend FriendlyId
     friendly_id :username, use: :slugged
 
