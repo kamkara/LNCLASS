@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= render "layouts/shared/headers" %>
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -17,6 +18,11 @@
       <%= render "shared/nav/navbar" %>
       <%= yield %>
         <%= render "layouts/shared/footers" %>
+
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
     </div>
 
 

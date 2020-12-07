@@ -1,0 +1,48 @@
+<%= form_with(model: course, local: true) do |f| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+        <% course.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-form">
+    <%= f.text_field :title, label: 'Titre:', class: "form-control", placeholder:"Le titre de la léçcon ..." %>
+  </div>
+  <div class="control-form my-1">
+    <%= f.rich_text_area :content, label: 'Contenu:', class: "form-control customized-min-height", placeholder: "Saissir le contenu ..." %>
+  </div>
+
+    <div class="row my-2">
+      <div class="col-5  col-md-3 col-lg-3">
+        <div class="input-form">
+          <span class="select">
+            <%= f.select :material_id,
+              @materials.map { |m| [m.title, m.id] },
+              placeholder:"la matiere",
+               hide_label: true, class:"form-control" %>
+
+          </span>
+        </div>
+      </div>
+      <div class="col-5 col-md-3 col-lg-3">
+        <div class="input-form">
+          <span class="select">
+            <%= f.select :level_id,
+              @levels.map { |l| [l.title, l.id] },
+              placeholder:"Niveau",
+               hide_label: true %>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Créer la léçcon",  class: "btn btn-primary" %>
+    </div>
+<% end %>

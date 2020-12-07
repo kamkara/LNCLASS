@@ -1,4 +1,13 @@
+
+
 class User < ApplicationRecord
+
+
+  before_save do
+    self.first_name = first_name.strip.squeeze(" ")
+    self.last_name = last_name.strip.squeeze(" ")
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,16 +23,38 @@ class User < ApplicationRecord
 
 
   #PRESENTE
-  validates :username,
+  validates :contact,
+            :matricule,
+            :city,
             :email, presence: true
 
+   validates :last_name, presence: true,
+                        length: { maximum: 30 },
+                        format: { with: /\A[^0-9`!@#\$%\^&*+_=]+\z/ }
+  validates :first_name, presence: true,
+                         length: { maximum: 30 },
+                         format: { with: /\A[^0-9`!@#\$%\^&*+_=]+\z/ }
+  validates :gender, presence: true
+
+#Birthday
+#validates :birthday, presence: true
+  #enum
+#enum gender: [:male, :female]
 
   #UNIQUENESS
    validates :contact,
+              :matricule,
              :email, uniqueness: true
 
 
-  #SLUG
+
+#SLUG
+  #build username
+
+  def username
+    "#{first_name} #{last_name}"
+  end
+
   extend FriendlyId
     friendly_id :username, use: :slugged
 

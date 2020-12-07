@@ -17,8 +17,6 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
@@ -36,6 +34,20 @@ gem 'bootstrap', '~> 5.0.0.alpha3'
 #gem 'time_ago_in_words', '~> 0.1.1'
 #gem 'acts_as_votable', '~> 0.12.1'
 #gem 'impressionist', '~> 2.0'
+
+
+################### REAL TIME && REACIVE APP ############################
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+#gem 'anycable', '~> 1.0', '>= 1.0.1'
+#gem 'view_component', '~> 2.22', '>= 2.22.1'
+#gem 'view_component_reflex', '~> 2.6', '>= 2.6.2'
+#gem 'cable_ready', '~> 4.4'
+#gem 'stimulus_reflex', '~> 3.3'
+#gem 'optimism', '~> 0.3.5'
+#gem 'futurism', '~> 0.6.0'
+
+
 
 ################  URLS ################
 gem 'friendly_id', '~> 5.4'

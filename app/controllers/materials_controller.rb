@@ -1,6 +1,7 @@
 class MaterialsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_material, only: [:show, :edit, :update, :destroy]
+  before_action :set_material
+
 
   # GET /materials
   # GET /materials.json
@@ -11,8 +12,25 @@ class MaterialsController < ApplicationController
   # GET /materials/1
   # GET /materials/1.json
   def show
-    @materials = Material.all
-    @courses = Course.where('material_id = ?', @material.id)
+
+    #student content
+    if current_user.role == "student"
+      @materials = Material.all
+      @courses   = Course.where("level_id = ? and material_id = ?",
+                          current_user.level_id, @material.id)
+    #prof content
+    elsif current_user.role == "teacher"
+       # order pour facilite la recherche du cours
+      @materials = Material.where("material_id = ?",
+                            current_user.material_id).
+                            order('create_at DESC')
+      @courses   = Course.where("material_id = ?",
+                           @material.id).order('created_at DESC')
+      #admin or dev Team
+    elsif current_user.role != "teacher" || current_user.role != "teacher"
+      @materials = Material.all.order('created_at DESC')
+      @courses   =Course.all.order('created_at DESC')
+    end
   end
 
   # GET /materials/new
@@ -69,6 +87,7 @@ class MaterialsController < ApplicationController
     def set_material
       @material = Material.friendly.find(params[:id])
     end
+
 
     # Only allow a list of trusted parameters through.
     def material_params
