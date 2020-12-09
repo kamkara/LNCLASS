@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'p_welcome/sign_up'
   get 'prof/index'
   get 'eleve/index'
   resources :exercices

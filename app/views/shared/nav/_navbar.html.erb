@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
   <!-- Navigation -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-blue-600 fixed-top">
-  <div class="container nav">
+  <div class="container">
     <%= link_to root_path, class: "navbar-brand logo font-bold" do %>
        LNCLASS
     <% end  %>
@@ -15,14 +15,14 @@
           <ul class="navbar-nav ml-auto">
 
             <!-- Home onglet/!-->
-            <li class="nav-item active">
+            <li class="nav-item nav-item_feed active">
               <%= link_to root_path, class: "m-links nav-link active " do %>
                <i class="fa fa-home"></i> Acceuil
               <% end %>
             </li>
 
             <!-- user avatar/!-->
-            <li class="nav-item active">
+            <li class="nav-item nav-item_feed active">
               <%= link_to edit_user_registration_path(@user), class: " active m-links nav-link capitalize" do %>
                 <i class="fas fa-user-circle"></i>
                  <%= current_user.username %>
@@ -31,7 +31,7 @@
               </li>
             <!-- create course by teacher/!-->
 
-              <li class="nav-item active">
+              <li class="nav-item nav-item_feed active">
                 <%= link_to dashboard_index_path, class: "m-links nav-link active  " do %>
                  <i class="fas fa-users"></i> TablesClass
                 <% end %>
@@ -39,7 +39,7 @@
 
 
              <!-- Sign out /!-->
-            <li class="nav-item active">
+            <li class="nav-item nav-item_feed active">
               <%= link_to destroy_user_session_path, method: :delete, class: "m-links nav-link active " do %>
                <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
               <% end %>
