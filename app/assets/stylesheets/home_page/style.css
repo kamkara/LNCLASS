@@ -4050,16 +4050,15 @@ p {
 }
 
 .footer-copyright {
-    background-color: #0067f4;
+    background-color: white;
 }
 
 .footer-copyright .copyright {
-    padding-bottom: 23px;
+    padding-bottom: 15px;
     padding-top: 13px;
 }
 
 .footer-copyright .copyright .text {
-    color: #fff;
     margin-top: 10px;
 }
 
