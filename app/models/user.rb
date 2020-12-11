@@ -27,8 +27,7 @@ class User < ApplicationRecord
             presence: true,
             length: { maximum: 30 },
             format: { with: /\A[^0-9`!@#\$%\^&*+_=]+\z/ }
-  validates :contact_phone, :contact_whatsapp, length: { maximum: 8 },
-            format: { with: /\A[^0-9`!@#\$%\^&*+_=]+\z/ }
+  validates :contact_phone, :contact_whatsapp, length: { in: 8..12 }
   #validates :gender, presence: true
 
   #Birthday
@@ -36,11 +35,9 @@ class User < ApplicationRecord
     #enum
   #enum gender: [:male, :female]
 
-  #UNIQUENESS
-
 #BEFORE ACTIONS
 
-#Delete whitespaces before and after fields
+#Delete whitespaces before and after fields, DownCase and capitalize
 before_save do
   self.contact_phone      = contact_phone.strip.squeeze(" ")
   self.contact_whatsapp   = contact_whatsapp.strip.squeeze(" ")
@@ -52,16 +49,18 @@ before_save do
 end
 
 #Build username
-before_save  do
+#before_save  do
+#  self.username = "#{self.first_name} #{self.last_name}"
+#end
+
+#this method build the slug and  constitue the full name
+def full_username_is_slug
   self.username = "#{self.first_name} #{self.last_name}"
 end
 
 extend FriendlyId
-  friendly_id :"self.username " , use: :slugged
+  friendly_id :full_username_is_slug , use: :slugged
 
-def should_generate_new_friendly_id?
-  username_changed?
-end
 
 #CONSTANTE
 CLASSROOM = ["1", "2", "3", "4", "5" "6", "7", "8", "9", "10", "11", "12"]
