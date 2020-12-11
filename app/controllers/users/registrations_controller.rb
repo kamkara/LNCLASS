@@ -19,6 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   end
 
+  private
   #enable material
     def find_materials
       @materials = Material.all

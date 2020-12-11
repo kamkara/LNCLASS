@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'prof/index'
-  get 'eleve/index'
+  get 'welcome/s_welcome'
+  get 'welcome/t_welcome'
   resources :exercices
 
   resources :courses do
