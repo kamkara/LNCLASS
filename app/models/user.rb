@@ -16,8 +16,9 @@ class User < ApplicationRecord
   #PRESENTE
   validates :contact_phone,
             :city, :school_name,
-            :email, presence: true
+            :email, :city, presence: true
 
+  validates :matricule, :email, uniqueness: true
   validates :last_name,
             presence: true,
             length: { maximum: 30 },
@@ -28,8 +29,7 @@ class User < ApplicationRecord
             format: { with: /\A[^0-9`!@#\$%\^&*+_=]+\z/ }
   validates :contact_phone, :contact_whatsapp, length: { maximum: 8 },
             format: { with: /\A[^0-9`!@#\$%\^&*+_=]+\z/ }
-  validatets :matricule, :email, :city, uniqueness: true
-    #validates :gender, presence: true
+  #validates :gender, presence: true
 
   #Birthday
   #validates :birthday, presence: true
@@ -57,7 +57,7 @@ before_save  do
 end
 
 extend FriendlyId
-  friendly_id :"#{self.username}" , use: :slugged
+  friendly_id :"self.username " , use: :slugged
 
 def should_generate_new_friendly_id?
   username_changed?
