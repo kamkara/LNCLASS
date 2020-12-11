@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  get 'p_welcome/sign_up'
-  get 'prof/index'
-  get 'eleve/index'
-=======
+
   get 'welcome/s_welcome'
   get 'welcome/t_welcome'
->>>>>>> DEV
+
   resources :exercices
 
   resources :courses do
