@@ -1,24 +1,25 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+
   layout "home"
-  before_action :configure_sign_up_params, only: [:create]
-  before_action :configure_account_update_params, only: [:update]
+  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :find_materials
   before_action :find_levels
 
-  protected
 
+ protected
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys:
-      [:username, :first_name, :last_name, :contact, :role, :city, :school_name, :class_name, :matricule, :school_code, :level_id, :gender, :slug])
+  def configure_permitted_parameters
+    added_attrs = [:username, :first_name, :last_name,
+      :contact_phone, :contact_whatsapp, :matricule,
+      :role, :city, :school_code, :school_name, :class_name,
+      :level_id, :material_id, :gender, :avatar, :slug]
+
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+
   end
 
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys:
-       [:email, :username, :contact, :school_code, :city, :role, :school_name, :level_id, :memo, :slug, :avatar])
-  end
-
+  private
   #enable material
     def find_materials
       @materials = Material.all
@@ -28,6 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     def find_levels
       @levels = Level.all
     end
+
 end
 
 
