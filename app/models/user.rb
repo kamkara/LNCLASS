@@ -58,6 +58,16 @@ def full_username_is_slug
   self.username = "#{self.first_name} #{self.last_name}"
 end
 
+#use other slug if current slug not evalable
+def full_username_is_slug
+    [
+      :full_username_is_slug,
+      [:full_username_is_slug, :school_name],
+      [:full_username_is_slug, :school_name, :contact_phone],
+      [:full_username_is_slug, :school_name, :contact_phone, :city],
+
+    ]
+  end
 extend FriendlyId
   friendly_id :full_username_is_slug , use: :slugged
 
