@@ -46,9 +46,9 @@ before_save do
   self.contact_phone      = contact_phone.strip.squeeze(" ")
   self.contact_whatsapp   = contact_whatsapp.strip.squeeze(" ")
   self.first_name         = first_name.strip.squeeze(" ").downcase.capitalize
-    self.last_name          = last_name.strip.squeeze(" ").downcase.capitalize
-    self.city               = city.strip.squeeze(" ").downcase.capitalize
-    self.school_name        = school_name.strip.squeeze(" ").downcase.capitalize
+  self.last_name          = last_name.strip.squeeze(" ").downcase.capitalize
+  self.city               = city.strip.squeeze(" ").downcase.capitalize
+  self.school_name        = school_name.strip.squeeze(" ").downcase.capitalize
     #self.class_name         = class_name.strip.squeeze(" ").downcase.capitalize
   end
 
