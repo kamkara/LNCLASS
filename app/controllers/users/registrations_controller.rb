@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
  protected
   # If you have extra params to permit, append them to the sanitizer.
   def configure_permitted_parameters
-    added_attrs = [:username, :first_name, :last_name,
+    added_attrs = [:email, :username, :first_name, :last_name,
       :contact_phone, :contact_whatsapp, :matricule,
       :role, :city, :school_code, :school_name, :class_name,
       :level_id, :material_id, :gender, :avatar, :slug]
