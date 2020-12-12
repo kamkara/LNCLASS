@@ -41,12 +41,9 @@ class User < ApplicationRecord
 
 
 ################  CUSTOM ACTIONS  ###########################
-def self.username
-  "#{self.first_name} #{self.last_name} "
-end
 
 def full_username_is_slug
-  self.username
+  self.username = "#{self.first_name} #{self.last_name}"
 end
 
 ################  BEFORE ACTIONS  ###########################
@@ -56,6 +53,7 @@ before_save do
   self.contact_whatsapp   = contact_whatsapp.strip.squeeze(" ")
   self.first_name         = first_name.strip.squeeze(" ").downcase.capitalize
   self.last_name          = last_name.strip.squeeze(" ").downcase.capitalize
+  self.username          = username.strip.squeeze(" ")
   self.city               = city.strip.squeeze(" ").downcase.capitalize
   self.school_name        = school_name.strip.squeeze(" ").downcase.capitalize
     #self.class_name         = class_name.strip.squeeze(" ").downcase.capitalize
