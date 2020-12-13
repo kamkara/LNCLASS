@@ -1,3 +1,4 @@
+
 # The name given to the PostgreSQL service (lowercase alphanumeric only).
 dbpostgres:
     # The type of your service (postgresql), which uses the format
@@ -7,6 +8,4 @@ dbpostgres:
     # the CLI will return an error.
     type: postgresql:12
     # The disk attribute is the size of the persistent disk (in MB) allocated to the service.
-    disk: 5000
-
-
+    disk: 5120

@@ -64,6 +64,12 @@ gem 'devise'
 gem 'jquery-rails', '~> 4.4'
 
 
+
+################ PRODUCTION ENVIRONEMENT  ################
+group :production do
+ gem 'unicorn'
+end
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
