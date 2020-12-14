@@ -4,6 +4,10 @@
     <title><%= title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Analytics-->
+    <!--  Google Analytics Start-->
+    <%= render "layouts/analytics/google_analytics" %>
+    <!--  Google Analytics end-->
     <%= render "layouts/shared/headers" %>
     <%= render "layouts/shared/headers_dashboard" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>

@@ -64,6 +64,8 @@ gem 'devise'
 gem 'jquery-rails', '~> 4.4'
 
 
+################  VARIABLES ENVOIRONEMENTS ################
+gem "figaro"
 
 ################ PRODUCTION ENVIRONEMENT  ################
 group :production do
@@ -105,6 +107,15 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ############################  DOCUMENTATIONS     ############################
 #https://dev.to/kattak2k/adding-a-favicon-to-your-site-using-webpacker-in-rails-6-2m2h
 
+############################  DOC RAILS    ############################
+#I18N
+
+#QR CODE READER RAILS
+#https://dev.to/morinoko/qr-code-reader-on-rails-5816
+
+#editor
+#https://dev.to/exampro/i-had-to-build-my-own-markdown-editor-because-no-tool-was-fast-enough-for-me-3b3o
+
 ############################  DOC TAILWIND CSS COMPONOEMENTS    ############################
 #A free repository for community components using TailwindCSS
 #https://tailwindcomponents.com/
@@ -118,3 +129,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #https://tailwindcomponents.com/component/simple-dashboard
 #https://tailwindcomponents.com/component/tailwind-css-admin-template
 #https://tailwindcomponents.com/component/responsive-dashboard-layout
+
+
