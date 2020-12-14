@@ -104,3 +104,17 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ############################  DOCUMENTATIONS     ############################
 #https://dev.to/kattak2k/adding-a-favicon-to-your-site-using-webpacker-in-rails-6-2m2h
+
+############################  DOC TAILWIND CSS COMPONOEMENTS    ############################
+#A free repository for community components using TailwindCSS
+#https://tailwindcomponents.com/
+#PROFILE PAGE
+#https://tailwindcomponents.com/component/profile-page-with-image-and-form
+#md bootstrap buttons
+#https://tailwindcomponents.com/component/md-bootstrap-buttons
+#Alerts components with Tailwindcss
+#https://tailwindcomponents.com/component/alerts-components-with-tailwindcss
+#Dashboard
+#https://tailwindcomponents.com/component/simple-dashboard
+#https://tailwindcomponents.com/component/tailwind-css-admin-template
+#https://tailwindcomponents.com/component/responsive-dashboard-layout
