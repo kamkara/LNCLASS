@@ -4,19 +4,13 @@ class DashboardController < ApplicationController
   before_action :find_materials
   before_action :find_levels
 
-
   def index
     @materials = Material.all
     @levels = Level.all
   end
-  def home
+ def tablesclass
 
-  end
-
-
-  def show
-
-  end
+ end
 
 private
 

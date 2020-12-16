@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'welcome/s_welcome'
-  get 'welcome/t_welcome'
-
   resources :exercices
 
   resources :courses do
@@ -11,9 +8,12 @@ Rails.application.routes.draw do
   end
   resources :materials
   resources :levels
-  get 'dashboard/index'
-  get 'dashboard/home'
+
   root to:'home#index'
+  get 'welcome/s_welcome'
+  get 'welcome/t_welcome'
+  get 'dashboard/tablesclass'
+
   devise_for :users, controllers: { registrations: 'users/registrations' }
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

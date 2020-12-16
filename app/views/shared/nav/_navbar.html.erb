@@ -2,7 +2,7 @@
 <!-- no header render on the home page/!-->
     <% if user_signed_in? %>
   <!-- Navigation -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-blue-600 fixed-top">
+<nav class="navbar navbar-expand-sm navbar-dark bg-blue-500 fixed-top">
   <div class="container">
     <%= link_to root_path, class: "navbar-brand logo font-bold" do %>
        LNCLASS
@@ -16,7 +16,7 @@
 
             <% if current_user.email=='kamkara@gmail.com' %>
               <li class="nav-item nav-item_feed active">
-                <%= link_to root_path, class: "m-links nav-link active " do %>
+                <%= link_to dashboard_tablesclass_path, class: "m-links nav-link active " do %>
                 <i class="fa fa-home"></i> Admin
                 <% end %>
               </li>

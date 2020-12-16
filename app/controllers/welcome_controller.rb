@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+
   before_action :find_materials
   before_action :find_levels
 
@@ -7,6 +8,7 @@ class WelcomeController < ApplicationController
 
   def t_welcome
   end
+
 
   private
 
