@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root to:'home#index'
   get 'welcome/s_welcome'
   get 'welcome/t_welcome'
+  get 'dashboard/index'
   get 'dashboard/tablesclass'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
