@@ -26,7 +26,9 @@ const imagePath = (name) => images(name, true)
 
 
 document.addEventListener('turbolinks:load', () => {
+    // google analytics load
 
+    //rich text editor
     document.addEventListener('click', () => {
         let element = event.target.closest('.text-content')
         if (!element) return;

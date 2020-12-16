@@ -14,6 +14,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
 
+            <% if current_user.email=='kamkara@gmail.com' %>
+              <li class="nav-item nav-item_feed active">
+                <%= link_to root_path, class: "m-links nav-link active " do %>
+                <i class="fa fa-home"></i> Admin
+                <% end %>
+              </li>
+            <% end %>
+
             <!-- Home onglet/!-->
             <li class="nav-item nav-item_feed active">
               <%= link_to root_path, class: "m-links nav-link active " do %>

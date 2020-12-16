@@ -53,10 +53,8 @@ before_save do
   self.contact_whatsapp   = contact_whatsapp.strip.squeeze(" ")
   self.first_name         = first_name.strip.squeeze(" ").downcase.capitalize
   self.last_name          = last_name.strip.squeeze(" ").downcase.capitalize
-  self.username          = username.strip.squeeze(" ")
   self.city               = city.strip.squeeze(" ").downcase.capitalize
   self.school_name        = school_name.strip.squeeze(" ").downcase.capitalize
-    #self.class_name         = class_name.strip.squeeze(" ").downcase.capitalize
   end
 
 ################  SLUG   ###########################
@@ -71,6 +69,8 @@ before_save do
 
     ]
   end
+
+  #SLUG
   extend FriendlyId
     friendly_id :full_username_is_slug , use: :slugged
 
@@ -78,7 +78,8 @@ before_save do
 
 ################  CONSTANTE   ###########################
 CLASSROOM = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
-CITY      = ["Abidjan", "Tiassalé", "N'Douci", "Agboville", "Divo", "Autres villes"]
+SCHOOL_NAME      = ["LYCEE MODERNE TIASSALE", "COLLEGE SAINT MICHEL TIASSALE", "COLLEGE PRIVE MIXTE UNION TIASSALE", "COLLÈGE NOTRE DAME DE LA PAIX TIASSALE", "COLLÈGE PRIVE LA MANNE", "Autres villes"]
+CITY      = [ "Tiassalé", "N'Douci", "Agboville", "Divo", "Autres villes"]
 
 
 ################  SIGN IN PHONE NUMBR OR EMAIL  ###########################

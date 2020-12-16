@@ -31,33 +31,24 @@
 
 
           <!-- city-->
-      <%= f.text_field :city, class:"form-control input-lg input-lg  my-2 ",
-        placeholder:"Ville :" %>
+      <%= f.select :city, collection: User::CITY %>
           <!-- school name-->
-      <%= f.text_field :school_name, class:"form-control input-lg input-lg  my-2 ",
-        placeholder:"Nom d'ecole :" %>
+      <%= f.select :school_name, collection: User::SCHOOL_NAME %>
+
+       <%= f.select :level_id, @levels.map { |l| [l.title, l.id] },
+              placeholder:"Niveau", hide_label: true %>
+
+         <%= f.select :class_name, collection: User::CLASSROOM %>
           <!-- student level-->
           <div class="row my-2">
       <div class="col-5  col-md-3 col-lg-3">
       <label for="" class=""> Niveau de la classe</label>
         <div class="input-form">
           <span class="select">
-            <%= f.select :level_id,
-              @levels.map { |l| [l.title, l.id] },
-              placeholder:"Niveau",
-               hide_label: true %>
           </span>
         </div>
       </div>
-      <div class="col-5 col-md-3 col-lg-3">
-      <label for="" class=""> Nunéro de la classe</label>
-        <div class="input-form">
-          <span class="select">
-            <%= f.select :class_name, collection: User::CLASSROOM %>
 
-          </span>
-        </div>
-      </div>
     </div>
           <!-- class name-->
       <div class="" id="email_section">
