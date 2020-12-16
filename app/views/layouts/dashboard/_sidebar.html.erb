@@ -21,14 +21,70 @@
 			</li>
 		</div>
 
+	<% if current_user.role == "teacher" %>
+	<ul class="mt-2 text-gray-700 dark:text-gray-400 capitalize">
+		<li
+				class="mt-3 p-2 text-dark dark-hover:text-blue-300
+				rounded-lg">
+			<%= link_to  new_course_path, class:"flex flex-col items-center" do %>
+					<svg class="fill-current h-5 w-5" viewBox="0 0 24 24">
+						<path
+							d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2
+							2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2m-2.47
+							8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59
+							17l5.94-5.94z"></path>
+					</svg>
+					<span class="text-xs mt-2"> Nouvelle Léçon</span>
+				<% end %>
+
+		</li>
+		<li
+				class="mt-3 p-2 text-dark dark-hover:text-blue-300
+				rounded-lg">
+				<%= link_to  courses_path, class:"flex flex-col items-center" do %>
+					<svg class="fill-current h-5 w-5" viewBox="0 0 24 24">
+						<path
+							d="M19 19H5V8h14m0-5h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2
+							2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2m-2.47
+							8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59
+							17l5.94-5.94z"></path>
+					</svg>
+					<span class="text-xs mt-2"> Liste léçons</span>
+				<% end %>
+
+			</li>
+
+				<li class="mt-3 p-2 text-black rounded-lg">
+        <%= link_to new_exercice_path, class:"flex flex-col items-center" do %>
+            <svg class="fill-current h-5 w-5" viewBox="0 0 24 24">
+              <path
+                d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0
+                001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"></path>
+            </svg>
+            <span class="text-xs mt-2">Nouvel Exercices</span>
+        <% end %>
+			</li>
+			<li class="mt-3 p-2 text-black rounded-lg">
+        <%= link_to exercices_path, class:"flex flex-col items-center" do %>
+            <svg class="fill-current h-5 w-5" viewBox="0 0 24 24">
+              <path
+                d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0
+                001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"></path>
+            </svg>
+            <span class="text-xs mt-2">Liste Exercies</span>
+        <% end %>
+			</li>
+	</ul>
+
+	<% elsif current_user.email == "kamkara@gmail.com" %>
+
 		<ul class="mt-2 text-gray-700 dark:text-gray-400 capitalize">
 			<!-- Links -->
 
 			<li class="mt-3 p-2 text-blue-600 dark:text-blue-300 rounded-lg">
-				<a href="teacher-dashboard/" class=" flex flex-col items-center">
-					<span class="text-xs mt-2">dashBoard</span>
-				</a>
-
+				<%= link_to  root_path ,class:" flex flex-col items-center" do %>
+					<span class="text-xs mt-2"> Tableau de Bord</span>
+				<% end %>
 			</li>
 
 			<li
@@ -82,7 +138,6 @@
             <span class="text-xs mt-2">List Materials</span>
         <% end %>
 			</li>
-
 		</ul>
 
 		<div
@@ -92,9 +147,9 @@
 			<%= link_to destroy_user_session_path, method: :delete do %>
            Déconnexion
       <% end %>
-
 		</div>
 
+	<% end %>
 	</nav>
 
 			<!-- Links
