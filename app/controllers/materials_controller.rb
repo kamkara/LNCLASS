@@ -1,4 +1,6 @@
 class MaterialsController < ApplicationController
+  layout "dashboard"
+
   before_action :authenticate_user!
   before_action :set_material, only: [:show, :edit, :update, :destroy]
 
