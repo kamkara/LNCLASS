@@ -4,7 +4,7 @@
 		<div>
 			<!-- App Logo -->
      <li class="mt-3 p-2 hover:text-blue-600 dark-hover:text-blue-300
-				rounded-lg">
+			">
 
 				<%= link_to root_path, class:"flex flex-col items-center" do %>
 					<svg
@@ -21,7 +21,8 @@
 			</li>
 		</div>
 
-	<% if current_user.role == "teacher" %>
+<!-- teacher sidebar content-->
+	<% if current_user.role == "student" %>
 	<ul class="mt-2 text-gray-700 dark:text-gray-400 capitalize">
 		<li
 				class="mt-3 p-2 text-dark dark-hover:text-blue-300
@@ -34,7 +35,7 @@
 							8.06L15.47 10l-4.88 4.88-2.12-2.12-1.06 1.06L10.59
 							17l5.94-5.94z"></path>
 					</svg>
-					<span class="text-xs mt-2"> Nouvelle Léçon</span>
+					<span class="text-xs mt-2"> Nouv Léçon</span>
 				<% end %>
 
 		</li>
@@ -61,7 +62,7 @@
                 d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0
                 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"></path>
             </svg>
-            <span class="text-xs mt-2">Nouvel Exercices</span>
+            <span class="text-xs mt-2">Nouv Exercice</span>
         <% end %>
 			</li>
 			<li class="mt-3 p-2 text-black rounded-lg">
@@ -75,7 +76,7 @@
         <% end %>
 			</li>
 	</ul>
-
+<!-- team sidebar content-->
 	<% elsif current_user.email == "kamkara@gmail.com" %>
 
 		<ul class="mt-2 text-gray-700 dark:text-gray-400 capitalize">
@@ -140,16 +141,17 @@
 			</li>
 		</ul>
 
+	<% end %>
+	<!-- sign out -->
 		<div
-			class="mt-auto flex items-center p-2 text-blue-700 bg-purple-200
-			dark:text-blue-500 rounded-full">
+			class="mt-auto flex items-center p-2 text-black-700">
 			<!-- important action -->
 			<%= link_to destroy_user_session_path, method: :delete do %>
-           Déconnexion
+			<i class="fa fa-power-off" aria-hidden="true"></i>
+          Déconnecter
       <% end %>
 		</div>
 
-	<% end %>
 	</nav>
 
 			<!-- Links

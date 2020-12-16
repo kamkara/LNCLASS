@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+
   before_action :authenticate_user!
   before_action :find_materials, only: [:index, :show, :new, :edit, :create]
   before_action :find_levels, only: [:index, :show, :new, :edit, :create]
@@ -29,15 +30,14 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course        = current_user.courses.build(course_params)
-    @course.author  = current_user.username
+    @course.author  = current_user.last_name
     @course.memo    = current_user.memo
 
     if @course.save
-      redirect_to @course, notice: 'Course was successfully created.'
-    render layout: "dashboard"
+      redirect_to @course, notice: 'Le Resumé est maintenant crée et publié!'
     else
       render :new
-      #render layout: "dashboard"
+
     end
   end
 

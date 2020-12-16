@@ -42,6 +42,9 @@ class User < ApplicationRecord
 
 ################  CUSTOM ACTIONS  ###########################
 
+def username
+  self.username = "#{self.first_name} #{self.last_name}"
+end
 def full_username_is_slug
   self.username = "#{self.first_name} #{self.last_name}"
 end
