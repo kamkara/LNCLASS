@@ -9,6 +9,13 @@
 //require text editor
 //= require trix/dist/trix
 //= require actiontext
+trix-editor {
+    &.customized-min-height {
+        min-height: 15em;
+        height: auto;
+    }
+}
+
 .trix-content {
     .attachment-gallery {
         >action-text-attachment,

@@ -30,7 +30,7 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course        = current_user.courses.build(course_params)
-    @course.author  = current_user.last_name
+    @course.author  = current_user.username
     @course.memo    = current_user.memo
 
     if @course.save
