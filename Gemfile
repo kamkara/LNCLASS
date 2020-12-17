@@ -58,7 +58,9 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 
 ################  MEMBERSHIP  ################
 gem 'devise'
+gem 'activerecord-postgres_enum'
 #gem 'devise_invitable', '~> 2.0', '>= 2.0.2'
+
 
 ################  JS  ################
 gem 'jquery-rails', '~> 4.4'
