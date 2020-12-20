@@ -28,6 +28,7 @@ gem 'mini_magick', '~> 4.11'
 ################  STYLES  ################
 gem 'bootstrap_form', '~> 4.5'
 gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
+#gem 'devise-tailwindcssed'
 gem 'bootstrap', '~> 5.0.0.alpha3'
 
 ################  UX/UI ################
