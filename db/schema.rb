@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2020_12_11_104218) do
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
+
+
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -131,7 +133,6 @@ ActiveRecord::Schema.define(version: 2020_12_11_104218) do
     t.string "memo"
     t.string "avatar"
     t.string "slug"
-    t.string "material_id"
     t.string "first_name"
     t.string "last_name"
     t.string "class_name"

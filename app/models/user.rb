@@ -36,15 +36,20 @@ class User < ApplicationRecord
   #validates :gender, presence: true
   #Birthday
    #validates :birthday, presence: true
-  #enum
-  #enum gender: [:male, :female]
 
+  #enum user_gender: [:female, :male ], _default: :male
 
+#enum user role
+# define rails enum and the underlying values to use for every enum-value
+#enum user_role: [:student, :teacher, :admin, :team, :support], default: :student
+
+#enum roles: [:student, :teacher, :admin], _default: :student
 ################  CUSTOM ACTIONS  ###########################
 
 def username
   self.username = "#{self.first_name} #{self.last_name}"
 end
+
 def full_username_is_slug
   self.username = "#{self.first_name} #{self.last_name}"
 end

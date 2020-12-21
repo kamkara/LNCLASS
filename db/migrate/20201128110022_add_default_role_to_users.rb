@@ -1,5 +1,5 @@
 class AddDefaultRoleToUsers < ActiveRecord::Migration[6.0]
   def change
-    change_column :users, :role, :string, :default => "student"
+    change_column :users, :role, :string, default: :student
   end
 end

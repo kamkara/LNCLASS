@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -26,10 +26,11 @@ gem 'mini_magick', '~> 4.11'
 
 
 ################  STYLES  ################
-gem 'bootstrap_form', '~> 4.5'
-gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
-#gem 'devise-tailwindcssed'
+
 gem 'bootstrap', '~> 5.0.0.alpha3'
+gem 'bootstrap_form'
+gem 'tailwindcss'
+gem 'bootstrap'
 
 ################  UX/UI ################
 #gem 'time_ago_in_words', '~> 0.1.1'
@@ -59,7 +60,9 @@ gem 'simple_form', '~> 5.0', '>= 5.0.3'
 
 ################  MEMBERSHIP  ################
 gem 'devise'
+gem 'activerecord-postgres_enum'
 #gem 'devise_invitable', '~> 2.0', '>= 2.0.2'
+
 
 ################  JS  ################
 gem 'jquery-rails', '~> 4.4'
@@ -83,7 +86,8 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-
+  gem 'solargraph'
+  gem 'rubocop'
   gem "better_errors"
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
