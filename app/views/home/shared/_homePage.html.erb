@@ -15,18 +15,11 @@
           </div>
         </div>
         <!-- render items -->
-        <%= render 'home/shared/items' %>
+        
+
+        <!-- sign in and sign up option -->
         <div class="hidden md:block">
-          <a
-            href="#"
-            class="inline-block py-1 md:py-4 text-gray-500 hover:text-gray-100 mr-6"
-            >Login</a
-          >
-          <a
-            href="#"
-            class="inline-block py-2 px-4 text-gray-700 bg-white hover:bg-gray-100 rounded-lg"
-            >Sign Up</a
-          >
+          <%= link_to "Se Connecter", root_path, class:"inline-block py-2 px-4 text-gray-700 bg-white hover:bg-gray-100 rounded-lg" %>
         </div>
       </div>
     </div>
@@ -39,20 +32,16 @@
               <h1
                 class="font-bold text-white text-2xl md:text-5xl leading-tight mb-4"
               >
-                Simple payment platform for any service
+                Maintenant, Etudier devient facile.
               </h1>
 
               <p class="text-indigo-200 md:text-xl md:pr-48">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id
-                vitae corrupti asperiores veritatis dolorum, commodi aperiam
-                enim.
+                La plateforme d'étude des élèves de la 6è à la Terminale pour Obtenir de Bonnes Notes.
+                Vos professeurs continuent à vous enséignez à la maison.
               </p>
-
-              <a
-                href="#"
-                class="mt-6 mb-12 md:mb-0 md:mt-10 inline-block py-3 px-8 text-white bg-red-500 hover:bg-red-600 rounded-lg shadow"
-                >Get Started</a
-              >
+                <%= link_to "Inscription élève", welcome_s_welcome_path, class:"mt-6 mb-12 md:mb-0 md:mt-10 inline-block py-3 px-8 text-white font-bold bg-red-500 hover:bg-red-600 rounded-lg shadow" %>
+                <%= link_to "Inscription prof", welcome_t_welcome_path, class:"mt-6 mb-12 md:mb-0 md:mt-10 inline-block py-3 px-8 text-white font-bold bg-blue-500 hover:bg-blue-600 rounded-lg shadow" %>
+              
             </div>
             <div class="md:w-1/2 relative">
               <div class="hidden md:block">
@@ -93,7 +82,7 @@
                   </div>
 
                   <div class="text-gray-800 text-center">
-                    Online <br />Services
+                    Préparations<br /> des interrogations dans toutes les matières
                   </div>
                 </div>
 
@@ -127,7 +116,7 @@
                   </div>
 
                   <div class="text-gray-800 text-center">
-                    Banking Services
+                    Des series Exercices<br />de Maison dans toutes les matières 
                   </div>
                 </div>
 
@@ -158,7 +147,7 @@
                   </div>
 
                   <div class="text-gray-800 text-center">
-                    Payment for <br />Internet
+                    Nombre d'Exercices illimité.
                   </div>
                 </div>
 
@@ -169,7 +158,7 @@
                   <div class="w-32 bg-gray-200" style="height: 560px;"></div>
                   <div class="flex-1 p-6">
                     <h2 class="text-lg text-gray-700 font-bold mb-3">
-                      Popular Payments
+                      Demander d'aide à d'autres profs ou ami(e)s
                     </h2>
                     <div class="flex mb-5">
                       <div class="w-16 rounded-full bg-gray-100 py-2 px-4 mr-2">
@@ -223,7 +212,7 @@
                     </div>
 
                     <h2 class="text-lg text-gray-700 font-bold mb-3">
-                      Popular Payments
+                      Prépares dévoirs toutes<br />les matières avec vos profs
                     </h2>
 
                     <div
@@ -364,7 +353,7 @@
                 </div>
                 <div class="flex-1 px-4 py-8">
                   <h2 class="text-xs text-gray-700 font-bold mb-1">
-                    Popular Payments
+                    Des series Exercices<br />dans toutes les matières 
                   </h2>
                   <div class="flex mb-5">
                     <div class="p-2 w-12 rounded-full bg-gray-100 mr-2"></div>
@@ -410,7 +399,7 @@
                   </div>
 
                   <h2 class="text-xs text-gray-700 font-bold mb-1">
-                    Popular Payments
+                    Demander d'aide à d'autres profs ou ami(e)s
                   </h2>
 
                   <div
@@ -500,7 +489,7 @@
                 </div>
 
                 <div class="text-gray-800 text-center text-sm">
-                  Payment for <br />Internet
+                  <span class="font-semibold">Prépares Intérrogations et dévoirs toutes</span><br />les matières avec vos profs
                 </div>
               </div>
             </div>
@@ -516,19 +505,5 @@
       </svg>
     </div>
 
-    <p class="text-center p-4 text-gray-600 pt-10">
-      Created by
-      <a
-        class="border-b text-blue-500"
-        href="https://twitter.com/mithicher"
-        target="_blank"
-        >@mithicher</a
-      >. Inspired by dribble shot
-      <a
-        href="https://dribbble.com/shots/8807920-Quickpay-Hero-section/attachments/1015863"
-        target="_blank"
-        class="border-b text-blue-500"
-        >https://dribbble.com/vadimdrut</a
-      >
-</p>
+    <%= render "home/shared/footer_message" %>
 </div>
