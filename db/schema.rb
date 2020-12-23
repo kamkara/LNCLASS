@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_104218) do
+ActiveRecord::Schema.define(version: 2020_12_22_171942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -99,9 +99,16 @@ ActiveRecord::Schema.define(version: 2020_12_11_104218) do
     t.index ["user_id"], name: "index_levels_on_user_id"
   end
 
+  create_table "levels_materials", id: false, force: :cascade do |t|
+    t.bigint "material_id", null: false
+    t.bigint "level_id", null: false
+    t.index ["level_id", "material_id"], name: "index_levels_materials_on_level_id_and_material_id"
+    t.index ["material_id", "level_id"], name: "index_levels_materials_on_material_id_and_level_id"
+  end
+
   create_table "materials", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title"
-    t.string "cycle"
+    t.string "level_ids"
     t.string "slug"
     t.uuid "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -133,6 +140,7 @@ ActiveRecord::Schema.define(version: 2020_12_11_104218) do
     t.string "memo"
     t.string "avatar"
     t.string "slug"
+    t.string "material_id"
     t.string "first_name"
     t.string "last_name"
     t.string "class_name"

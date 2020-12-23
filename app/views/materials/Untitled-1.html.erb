@@ -1,0 +1,18 @@
+<form action="">
+<div>
+    <%% w (html css javascript ruby ​​php c perl java go scala cobol SQL swift) .each.with_index do | language, i |%>
+    <label>
+      <% = f.check_box: language, {multiple: true}, language, nil%>
+      <% = language%>
+    </label>
+    <% end%>
+  </div>
+</form>
+
+controller
+def configure_permitted_parameters
+      devise_parameter_sanitizer.permit (: sign_up, keys: [: username,: profimage,: profile,: portfolio,: teacherregist, language: []])
+      devise_parameter_sanitizer.permit (: account_update, keys: [: username,: profimage,: profile,: portfolio,: teacherregist, language: []])
+    end
+
+rails g migration add_language_to_users language: text

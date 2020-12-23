@@ -3,7 +3,7 @@ class MaterialsController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_material, only: [:show, :edit, :update, :destroy]
-
+  before_action :find_levels
 
   # GET /materials
   # GET /materials.json
@@ -37,6 +37,7 @@ class MaterialsController < ApplicationController
 
   # GET /materials/new
   def new
+    
     @material = Material.new
   end
 
@@ -89,10 +90,14 @@ class MaterialsController < ApplicationController
     def set_material
       @material = Material.friendly.find(params[:id])
     end
-
-
+    
+    #enable level
+    def find_levels
+      @level = Level.all
+   end
+    
     # Only allow a list of trusted parameters through.
     def material_params
-      params.require(:material).permit(:title, :cycle)
+      params.require(:material).permit(:title, level_ids:[])
     end
 end

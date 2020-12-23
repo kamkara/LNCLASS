@@ -2,5 +2,10 @@
     "emmet.includeLanguages": {
         "erb": "html"
     },
-    "emmet.extensionsPath": ""
+    "emmet.extensionsPath": "",
+    "files.associations": {
+        ".rb": "html"
+    },
+    "files.autoSave": "onWindowChange",
+    "workbench.tree.indent": 6
 }

@@ -1,6 +1,9 @@
 class Level < ApplicationRecord
+  
+  #RELATIONS
   belongs_to :user
   has_many :courses
+  has_and_belongs_to_many :materials
 
   #SLUG
   extend FriendlyId

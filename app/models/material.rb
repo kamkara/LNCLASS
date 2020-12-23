@@ -1,11 +1,8 @@
 class Material < ApplicationRecord
+  #RELATIONS
   belongs_to :user
   has_many :courses
-
-  #CONSTANTS
-  CYCLES= ["all","sec"]
-
-
+  has_and_belongs_to_many :levels, dependent: :destroy
 
   #SLUG
   extend FriendlyId
