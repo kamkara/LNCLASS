@@ -359,7 +359,7 @@ DEPENDENCIES
   tailwindcss
   turbolinks (~> 5)
   tzinfo-data
-  unicorn
+  unicorn (~> 5.7)
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)

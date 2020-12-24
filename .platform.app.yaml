@@ -3,11 +3,11 @@
 #
 # See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
 
-# The name of this app. Must be unique within a project.
-name: "app"
+# The name of this app. Mus't be unique within a project.
+name: "lnclass_app"
 
 # The runtime the application uses.
-type: "ruby:2.7"
+type: "ruby:2.7.2"
 
 # The relationships of the application with services or other applications.
 #
@@ -29,28 +29,36 @@ variables:
         BUNDLE_ERROR_ON_STDERR: 1
         RAILS_TMP: /tmp
         EXECJS_RUNTIME: 'Node'
+#Define the web locations your application is using:
 
+web:
+  upstream: 
+    socket_family: "unix"
+  commands: 
+    start: "\"unicorn -l $SOCKET -E production config.ru\""
+  locations: 
+    '/': 
+      root: "\"public\""
+      passthru: true
+      expires: "1h"
+      allow: true
 # The 'mounts' describe writable, persistent filesystem mounts in the application.
 mounts:
-    "/log":
-        source: local
-        source_path: log
-    "/tmp":
-        source: local
-        source_path: tmp
+  'web/uploads':
+    source: local
+    source_path: uploads
 
-
-
+ 
 # The hooks executed at various points in the lifecycle of the application.
+
 hooks:
     # The build hook turns what is in source control into the deployable application.
     build: |
-        gem install bundler:2.0.2
-        bundle install --without development test
-        RAILS_ENV=production bundle exec rake assets:precompile
-    # The deploy hook runs after your application has been deployed and started.
+      bundle install --without development test
     deploy: |
-        bundle exec rails db:migrate
+      RACK_ENV=production bundle exec rake db:migrate
+    # The deploy hook runs after your application has been deployed and started.
+
 # The configuration of the application when running.
 web:
     upstream:
@@ -59,4 +67,6 @@ web:
         socket_family: "unix"
 
     commands:
-        start: 'bundle exec unicorn -l $SOCKET'
+        start: "bundle exec unicorn -l $SOCKET -E production config.ru"
+
+        
