@@ -4,7 +4,7 @@
 # See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
 
 # The name of this app. Mus't be unique within a project.
-name: "lnclass_app"
+name: app
 
 # The runtime the application uses.
 type: "ruby:2.7.2"
