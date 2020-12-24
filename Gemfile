@@ -71,7 +71,7 @@ gem "figaro"
 
 ################ PRODUCTION ENVIRONEMENT  ################
 group :production do
- gem 'unicorn'
+ gem 'unicorn', '~> 5.7'
 end
 
 # Reduces boot times through caching; required in config/boot.rb
