@@ -4,8 +4,15 @@
 
 
 document.addEventListener('turbolinks;load', ()  => {
+    
 // Variables
-let extension =" @gmail.com";
-getElementByid()
+let contact     = document.getElementById("student_contact");
+let extension   = "@gmail.com";
+let emailField  = document.getElementById("studente_email");
+let matricule   = document.getElementById("student_matricule").value.replace(/ /g, "");
+contact.addEventListener("onfocus",function(e){
+    emailField.value = matricule+extension;
+    console.log(emailField);
+});
+
 })
-this.

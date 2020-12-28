@@ -85,9 +85,10 @@ before_save do
 
 
 ################  CONSTANTE   ###########################
-CLASSROOM = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
-SCHOOL_NAME      = ["LYCEE MODERNE TIASSALE", "COLLEGE SAINT MICHEL TIASSALE", "COLLEGE PRIVE MIXTE UNION TIASSALE", "COLLÈGE NOTRE DAME DE LA PAIX TIASSALE", "COLLÈGE PRIVE LA MANNE", "Autres villes"]
-CITY      = [ "Tiassalé", "N'Douci", "Agboville", "Divo", "Autres villes"]
+CLASSROOM   = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+SCHOOL_NAME = ["LYCEE MODERNE TIASSALE", "COLLEGE SAINT MICHEL TIASSALE", "COLLEGE PRIVE MIXTE UNION TIASSALE", "COLLÈGE NOTRE DAME DE LA PAIX TIASSALE", "COLLÈGE PRIVE LA MANNE", "Autres villes"]
+CITY        = [ "Tiassalé", "N'Douci", "Agboville", "Divo", "Autres villes"]
+ROLE        = ["student", "teacher", "Admin"]
 
 
 ################  SIGN IN PHONE NUMBR OR EMAIL  ###########################

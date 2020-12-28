@@ -13,64 +13,68 @@
         <div class="row">
           <!-- User first and last name-->
 
-          <div class="col-xs-6 col-md-6 my-2">
-            <%= f.text_field :first_name, class:"form-control input-lg",
-            placeholder:"Nom :", autofocus: true, hide_label: true%>
+          <div class="col-xs-6 col-md-6 my-1">
+            <%= f.text_field :first_name,
+            hide_label: true, class:"form-control input-lg",
+            placeholder:"Nom :", autofocus: true %>
           </div>
-          <div class="col-xs-6 col-md-6 my-2">
-            <%= f.text_field :last_name, class:"form-control  input-lg",
-                placeholder:"Prénom :" , hide_label:true %>
+          <div class="col-xs-6 col-md-6 my-1">
+            <%= f.text_field :last_name,
+             hide_label: true, class:"form-control  input-lg",
+                placeholder:"Prénom :" %>
           </div>
         </div>
           <!-- Matricule-->
-        <%= f.text_field :matricule, class:"form-control input-lg",
-        placeholder:"N° Matricule :", hide_label: true %>
+        <%= f.text_field :matricule,
+         hide_label: true, class:"form-control input-lg",
+        placeholder:"N° Matricule :", id:"student_matricule" %>
 
 
           <!-- city-->
-      <div class="options md:flex md:space-x-6 text-sm items-center text-gray-700 mt-4">
+      <div class="options md:flex text-sm items-center text-gray-700 ">
                   
-        <p class="w-1/3  md:mb-0"> Ville: </p>
-        <%= f.select :city, collection: User::CITY, 
-        class:"w-1/3 border border-gray-200 p-2 focus:outline-none focus:border-gray-500" %>
+      <%= f.select :city, User::CITY, label: "Ville:",label_class:"font-semibold",
+        wrapper: {class:"w-1/3 border border-gray-200 focus:outline-none focus:border-gray-500"} %>
     
       <!-- school name-->
-      <p class="w-1/3  md:mb-0">Etablissement: </p>
-      <%= f.select :school_name, collection: User::SCHOOL_NAME, 
-      class:"w-1/3 border border-gray-200 p-2 focus:outline-none 
-      focus:border-gray-500" %>
-
-      <p class="w-1/3  md:mb-0">Niveau: </p>
-      <%= f.select :level_id, @levels.map { |l| [l.title, l.id] },
-              placeholder:"Niveau", hide_label: true, 
-              class:"w-1/3 border border-gray-200 p-2 focus:outline-none focus:border-gray-500" %>
+      <%= f.select :school_name, User::SCHOOL_NAME, label: "Ecole: ", label_class:"font-semibold",
+      wrapper: { class: "w-1/3 border border-gray-200 focus:outline-none 
+      focus:border-gray-500"} %>      
+     
+      <%= f.select :level_id, @levels.map { |l| [l.title, l.id] }, label: "Niveau: ", label_class:"font-semibold",
+       wrapper: {class:"w-1/3 border border-gray-200 focus:outline-none focus:border-gray-500"} %>
       
     </div>
     
     <!-- phone contact-->
-      <%= f.phone_field :contact_phone, class:"form-control  input-lg my-2 ",
-        placeholder:"N° téléphone :" %>
-          <!-- class name-->
-      <div class="" id="email_section">
-        <%= f.email_field :email, class:"form-control input-lg ",
-        placeholder:"Adresse email:",
-        help:"Laissez le champs vide, si vous n'avez d'adresse email.",
-         id:'' %>
-
+      <%= f.phone_field :contact_phone, class:"form-control  input-lg ",
+        placeholder:"N° téléphone :", hide_label: true, id:"student_contact",
+        help:"Numéro de téléphone Ivoirien."  %>
         <!-- password section-->
-        <%= f.password_field :password, class:"form-control  input-lg my-2 ",
-        placeholder:"Mot de passe :", help:"6 caracteres minimuim" %>
-        <%= f.password_field :password_confirmation, class:"form-control md:input-lg lg:input-lg my-2 ",
-        placeholder:"Confirmez votre mot de passe :" %>
+        <%= f.password_field :password, hide_label: true, class:"form-control  input-lg ", 
+        help:"Un bon mot de passe doit avoir plus de 8 caractères",
+        placeholder:"Mot de passe :" %>
 
+        <!-- Passwword confirm -->
+        <%= f.password_field :password_confirmation, 
+        hide_label: true, class:"form-control md:input-lg lg:input-lg my-1 ",
+        placeholder:"Confirmez votre mot de passe :", 
+        help:"retaper le mot de passe" %>
+
+        <!-- user email-->
+        <%= f.email_field :email, id:"studente_email", hide_label: true, 
+        class:"form-control input-lg ",placeholder:"Adresse email:",
+        help:"Laissez le champs vide, si vous n'avez d'adresse email." %>
+        <!-- User role-->
+         <%= f.text_field :role, value:'teacher' %>
         <!-- phone contact-->
-        <%= f.phone_field :contact_whatsapp, class:"form-control  input-lg my-2 ",
-        placeholder:"N° téléphone WhatsApp :" %>
-      </div>
+        <%= f.phone_field :contact_whatsapp, class:"form-control  input-lg my-1 ",
+        placeholder:"N° téléphone WhatsApp :", hide_label: true , 
+        help:"Ajouter votre numéro whatsapp, pas Obligatoire!" %>
 
         <!-- Corporate Msg-->
     <span class="help-block">
-      En cliquant sur Créer mon compte, vous acceptez nos conditions et Nous vous accordons une semaine d'utilisation gratuite de la plateforme pour bien.
+      En cliquant sur Créer mon compte, votre compte sera créé et vous aurez une semaine offerte.
     </span>
     <div class="actions">
       <%= f.submit "Créer mon compte", class:"btn btn-lg btn-primary btn-block signup-btn" %>
