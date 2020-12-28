@@ -47,4 +47,4 @@ web:
       allow: true
 
 # The size of the persistent disk of the application (in MB).
-disk: 5024
+disk: 5120
