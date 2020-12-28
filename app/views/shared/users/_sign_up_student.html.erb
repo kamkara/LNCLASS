@@ -5,7 +5,7 @@
 
     <span class="items-center">
       <legend>Inscription</legend>
-      <h4 class="font-semibold">Inscrivez-vous gratuitement, C'est simple.</h4>
+      <h4 class="font-semibold mb-2">Inscrivez-vous gratuitement, C'est simple.</h4>
     </span>
 
       <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -27,7 +27,7 @@
           <!-- Matricule-->
         <%= f.text_field :matricule,
          hide_label: true, class:"form-control input-lg",
-        placeholder:"N° Matricule :", id:"student_matricule" %>
+        placeholder:"N° Matricule :", id:"studentMatricule" %>
 
 
           <!-- city-->
@@ -48,7 +48,7 @@
     
     <!-- phone contact-->
       <%= f.phone_field :contact_phone, class:"form-control  input-lg ",
-        placeholder:"N° téléphone :", hide_label: true, id:"student_contact",
+        placeholder:"N° téléphone :", hide_label: true, id:"studentContact",
         help:"Numéro de téléphone Ivoirien."  %>
         <!-- password section-->
         <%= f.password_field :password, hide_label: true, class:"form-control  input-lg ", 
@@ -62,11 +62,10 @@
         help:"retaper le mot de passe" %>
 
         <!-- user email-->
-        <%= f.email_field :email, id:"studente_email", hide_label: true, 
+        <%= f.email_field :email, id:"studentEmail", hide_label: true, 
         class:"form-control input-lg ",placeholder:"Adresse email:",
         help:"Laissez le champs vide, si vous n'avez d'adresse email." %>
-        <!-- User role-->
-         <%= f.text_field :role, value:'teacher' %>
+        
         <!-- phone contact-->
         <%= f.phone_field :contact_whatsapp, class:"form-control  input-lg my-1 ",
         placeholder:"N° téléphone WhatsApp :", hide_label: true , 
