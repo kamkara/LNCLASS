@@ -43,8 +43,8 @@ web:
     '/': 
       root: "\"public\""
       passthru: true
-      expires: "1h"
+      expires: 1200s
       allow: true
 
 # The size of the persistent disk of the application (in MB).
-disk: 10240
+disk: 5024
