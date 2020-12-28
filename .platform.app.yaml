@@ -29,10 +29,8 @@ relationships:
 
 
 hooks:
-    build: |
-      bundle install
-    deploy: |
-      RACK_ENV=production bundle exec rake db:migrate
+    build: bundle install
+    deploy:  RACK_ENV=production bundle exec rake db:migrate
 
 web:
   upstream: 
