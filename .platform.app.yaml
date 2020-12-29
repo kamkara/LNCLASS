@@ -29,8 +29,12 @@ relationships:
 
 
 hooks:
-    build: bundle install
-    deploy:  RACK_ENV=production bundle exec rake db:migrate
+    build: |
+      gem install bundler
+      bundle install --without development test
+      RAILS_ENV=production bundle exec rake assets:precompile
+    deploy: |
+      bundle exec rake db:migrate
 
 web:
   upstream: 
@@ -46,3 +50,5 @@ web:
 
 # The size of the persistent disk of the application (in MB).
 disk: 5120
+
+
