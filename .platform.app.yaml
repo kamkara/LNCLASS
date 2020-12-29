@@ -31,7 +31,7 @@ relationships:
 hooks:
     build: |
       gem install bundler
-      bundle install --without development test
+      bundle install
       RAILS_ENV=production bundle exec rake assets:precompile
     deploy: |
       bundle exec rake db:migrate
