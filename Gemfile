@@ -28,7 +28,7 @@ gem 'mini_magick', '~> 4.11'
 ################  STYLES  ################
 gem 'bootstrap_form'
 gem 'tailwindcss'
-gem 'bootstrap'
+gem 'bootstrap', '~> 5.0.0.alpha3'
 
 ################  UX/UI ################
 #gem 'time_ago_in_words', '~> 0.1.1'
@@ -70,9 +70,7 @@ gem 'jquery-rails', '~> 4.4'
 gem "figaro"
 
 ################ PRODUCTION ENVIRONEMENT  ################
-group :production do
- gem 'unicorn', '~> 5.7'
-end
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

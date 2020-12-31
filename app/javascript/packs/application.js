@@ -11,6 +11,8 @@ require("channels")
 require("trix")
 require("@rails/actiontext")
 
+// import font-awesome
+import "@fortawesome/fontawesome-free/js/all";
 // requires section
 //= require jquery
 

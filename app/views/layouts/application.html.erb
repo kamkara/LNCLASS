@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
     <title><%= title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
     <!-- Analytics-->
     <!--  Google Analytics Start
     render "layouts/analytics/google_analytics"
       Google Analytics end-->
     <%= render "layouts/shared/headers" %>
-    <%= render "layouts/shared/headers_dashboard" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="md:bg-gray-200">
-    <div class="md:mt-8">
-      <%= render "shared/nav/navbar" %>
+    <div class="">
+      <%= render "shared/nav/navbar-primary" %>
       <%= yield %>
       <%= render "layouts/shared/noticed" %>
       <%= render "layouts/shared/footers_dashboard" %>
