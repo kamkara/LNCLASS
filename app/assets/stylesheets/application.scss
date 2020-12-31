@@ -11,6 +11,14 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ /*** import font-awesome  */
+ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+ @import '@fortawesome/fontawesome-free/scss/fontawesome';
+ @import '@fortawesome/fontawesome-free/scss/solid';
+ @import '@fortawesome/fontawesome-free/scss/regular';
+ @import '@fortawesome/fontawesome-free/scss/brands';
+ @import '@fortawesome/fontawesome-free/scss/v4-shims';
+
 
 @import "users/sign_up";
 @import "bootstrap";
