@@ -22,16 +22,16 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-rails-local_database: &rails-local-database
+#rails-local_database: &rails-local-database
+
+development:
+  <<: *default
+#  <<: *rails-local-database
+  database: LNCLASS_development
   username: lnclass
   password: "lnclass"
   host: localhost
   port: 5432
-
-development:
-  <<: *default
-  <<: *rails-local-database
-  database: LNCLASS_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -88,4 +88,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  
+  database: LNCLASS_production
+  username: lnclass
+  password: <%= ENV['SECRET_KEY_BASE'] %>
