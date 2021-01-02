@@ -33,7 +33,7 @@ disk: 5120
 
 hooks:
     build: |
-      gem install bundler:2.2.2
+      gem install bundler:2.2.3
       bundle install
       RAILS_ENV=production bundle exec rake assets:precompile
     deploy: |
